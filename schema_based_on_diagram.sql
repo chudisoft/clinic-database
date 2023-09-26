@@ -31,6 +31,8 @@ CREATE TABLE medical_histories_treatments (
             REFERENCES treatment(id)
 );
 
+
+
 CREATE TABLE invoices(
     id serial PRIMARY KEY,
     total_amount DECIMAL,
@@ -61,3 +63,5 @@ CREATE INDEX ON invoices (medical_history_id);
 CREATE INDEX ON invoice_items(treatment_id);
 CREATE INDEX ON invoice_items(invoice_id);
 
+CREATE INDEX ON medical_histories_treatments(medical_id);
+CREATE INDEX ON medical_histories_treatments (treatment_id);
